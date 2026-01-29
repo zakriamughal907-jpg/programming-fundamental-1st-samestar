@@ -1,18 +1,26 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-	int num;
-	long long fact = 1;
-	cout<<"Enter a number:";
-    cin >> num;
 
-    if(num < 0) {
-     cout << "Factorial of negative numbers is not defined.";
-    } else {
-       for(int i = 1; i <= num; i++) {
-         fact *= i;
-        }
-        cout << "Factorial = " << fact;
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
+
+    int largest = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+
+    cout << "Largest number = " << largest;
+
     return 0;
 }

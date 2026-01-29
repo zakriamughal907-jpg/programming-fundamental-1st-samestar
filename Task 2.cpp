@@ -1,11 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-	int num;
-	cout<<"Enter a number:";
-	cin>>num;
-	for(int i=1;i<=10;i++){
-		cout<<num<<"x"<<i<<"="<< num*i<< endl;
-	}
-	return 0;
+
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = n - 1; i >= 0; i--) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
 }

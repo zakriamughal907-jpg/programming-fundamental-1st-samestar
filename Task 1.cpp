@@ -1,12 +1,12 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-	int N;
-	cout<<"Enter N:";
-	cin>> N;
-	for(int i=1;i<=N;i++)
-	{
-		cout<<i<<endl;
-	}
-	return 0;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
 }
