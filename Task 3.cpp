@@ -1,24 +1,15 @@
 #include <iostream>
 using namespace std;
 
+void checkEvenOdd(int num) {
+    if (num % 2 == 0)
+        cout << "Even" << endl;
+    else
+        cout << "Odd" << endl;
+}
+
 int main() {
-    int n, sum = 0;
-    float avg;
-
-    cout << "Enter size of array: ";
-    cin >> n;
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-        sum = sum + arr[i];
-    }
-
-    avg = sum / n;
-
-    cout << "Sum = " << sum << endl;
-    cout << "Average = " << avg << endl;
-
+    checkEvenOdd(4);
+    checkEvenOdd(7);
     return 0;
 }

@@ -1,20 +1,11 @@
 #include <iostream>
 using namespace std;
 
+void greeting() {
+    cout << "Hello, Welcome to C++ Functions!";
+}
+
 int main() {
-    int n;
-    cout << "Enter size of array: ";
-    cin >> n;
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    for (int i = n - 1; i >= 0; i--) {
-        cout << arr[i] << " ";
-    }
-
+    greeting();
     return 0;
 }
