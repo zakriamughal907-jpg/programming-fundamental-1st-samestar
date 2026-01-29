@@ -1,23 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int n) {
-    int fact = 1;
 
-    for (int i = 1; i <= n; i++) {
-        fact = fact * i;
-    }
-
-    return fact;
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 int main() {
-    int num;
+    int x = 5, y = 10;
 
-    cout << "Enter a number: ";
-    cin >> num;
+    cout << "Before swapping:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
 
-    cout << "Factorial = " << factorial(num);
+
+    swap(&x, &y);
+
+    cout << "After swapping:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
 
     return 0;
 }

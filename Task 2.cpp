@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 
-void greeting() {
-    cout << "Hello, Welcome to C++ Functions!";
-}
-
 int main() {
-    greeting();
+    int num = 20;
+    int *ptr = &num;
+
+    *ptr = 50;   
+
+    cout << "Modified value of num: " << num << endl;
+
     return 0;
 }
