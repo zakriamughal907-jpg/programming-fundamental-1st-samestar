@@ -1,21 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-	int balance;
-	int withdraw;
-	cout<<"Enter your  balance:";
-	cin>>balance;
-	cout<<"Enter your withdraw";
-		cin>>withdraw;
-	if(withdraw <=balance){
-		balance-=withdraw;
-		cout<<"remain balance :$" <<balance<<endl;
-		
-		
-	
-	} else{
-		cout<<"insufficient balnace:"<<endl;
-		return 0;
-		
-	}
+
+int main() {
+    int password;
+    int correctPassword = 1234;
+
+    do {
+        cout << "Enter Password: ";
+        cin >> password;
+
+        if (password != correctPassword) {
+            cout << "Wrong password! Try again.\n";
+        }
+
+    } while (password != correctPassword);
+
+    cout << "Access Granted!";
+    return 0;
 }

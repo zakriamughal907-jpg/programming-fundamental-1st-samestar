@@ -2,80 +2,46 @@
 using namespace std;
 
 int main() {
-    int category, item, quantity;
-    float price = 0, total, discount = 0, finalAmount;
+    int choice;
+    double balance = 1000, amount;
 
-    cout << "===== SHOPPING SYSTEM =====\n";
-    cout << "1. Electronics\n";
-    cout << "2. Clothing\n";
-    cout << "3. Groceries\n";
-    cout << "Select Category (1-3): ";
-    cin >> category;
+    while (true) {
+        cout << "\n===== BANK MENU =====\n";
+        cout << "1. Deposit Money\n";
+        cout << "2. Withdraw Money\n";
+        cout << "3. Check Balance\n";
+        cout << "4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    switch (category) {
-        case 1:
-            cout << "\nElectronics Items:\n";
-            cout << "1. Laptop ($1000)\n";
-            cout << "2. Smartphone ($700)\n";
-            cout << "3. Headphones ($150)\n";
-            cout << "Select Item: ";
-            cin >> item;
+        if (choice == 1) {
+            cout << "Enter amount to deposit: ";
+            cin >> amount;
+            balance += amount;
+            cout << "Amount Deposited Successfully!\n";
+        }
+        else if (choice == 2) {
+            cout << "Enter amount to withdraw: ";
+            cin >> amount;
 
-            if (item == 1) price = 1000;
-            else if (item == 2) price = 700;
-            else if (item == 3) price = 150;
+            if (amount <= balance) {
+                balance -= amount;
+                cout << "Withdraw Successful!\n";
+            } else {
+                cout << "Insufficient Balance!\n";
+            }
+        }
+        else if (choice == 3) {
+            cout << "Current Balance: Rs." << balance << endl;
+        }
+        else if (choice == 4) {
+            cout << "Thank you! Program Ended.";
             break;
-
-        case 2:
-            cout << "\nClothing Items:\n";
-            cout << "1. Jacket ($120)\n";
-            cout << "2. T-Shirt ($40)\n";
-            cout << "3. Jeans ($60)\n";
-            cout << "Select Item: ";
-            cin >> item;
-
-            if (item == 1) price = 120;
-            else if (item == 2) price = 40;
-            else if (item == 3) price = 60;
-            break;
-
-        case 3:
-            cout << "\nGroceries Items:\n";
-            cout << "1. Milk ($2)\n";
-            cout << "2. Bread ($3)\n";
-            cout << "3. Eggs ($5)\n";
-            cout << "Select Item: ";
-            cin >> item;
-
-            if (item == 1) price = 2;
-            else if (item == 2) price = 3;
-            else if (item == 3) price = 5;
-            break;
-
-        default:
-            cout << "Invalid Category!";
-            return 0;
+        }
+        else {
+            cout << "Invalid Choice! Try again.\n";
+        }
     }
-
-    cout << "Enter Quantity: ";
-    cin >> quantity;
-
-    total = price * quantity;
-
-    // Discount Policy
-    if (total >= 100 && total <= 500)
-        discount = total * 0.10;
-    else if (total > 500)
-        discount = total * 0.20;
-    else
-        discount = 0;
-
-    finalAmount = total - discount;
-
-    cout << "\n----- INVOICE -----\n";
-    cout << "Total Amount: $" << total << endl;
-    cout << "Discount: $" << discount << endl;
-    cout << "Final Amount: $" << finalAmount << endl;
 
     return 0;
 }
