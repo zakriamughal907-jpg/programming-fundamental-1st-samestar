@@ -1,23 +1,27 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    int age;           
-    double income;      
-    cout << "Enter your age: ";
-    cin >> age;
-    cout << "Enter your annual income: ";
-    cin >> income;
 
-    if (age >= 18) {
-        if (income >= 30000) {
-            cout << "Congratulations! You are eligible for a loan." << endl;
-        } else {
-            cout << "You meet the age requirement but are not eligible for a loan because your income is below $30,000." << endl;
-        }
-    } else {
-        cout << "You are not eligible for a loan because you are under 18 years of age." << endl;
+int main() {
+    int day;
+    cout << "Enter day number (1-7): ";
+    cin >> day;
+
+    switch(day) {
+        case 1: cout << "Monday"; 
+		break;
+        case 2: cout << "Tuesday";
+		 break;
+        case 3: cout << "Wednesday";
+		 break;
+        case 4: cout << "Thursday";
+		 break;
+        case 5: cout << "Friday";
+		 break;
+        case 6: cout << "Saturday"; 
+		break;
+        case 7: cout << "Sunday";
+		 break;
+        default: cout << "Invalid day number!";
     }
-
     return 0;
 }
